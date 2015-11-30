@@ -14,14 +14,20 @@
 {
     if(self = [super initWithCoder:aDecoder])
     {
-        self.value = [[aDecoder decodeObjectForKey:@"value"] integerValue];
+        self.actualValue = [[aDecoder decodeObjectForKey:@"actualValue"] integerValue];
+        self.plannedValue = [[aDecoder decodeObjectForKey:@"plannedValue"] integerValue];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder{
     [super encodeWithCoder:aCoder];
-    [aCoder encodeObject:@(self.value) forKey:@"value"];
+    [aCoder encodeObject:@(self.actualValue) forKey:@"actualValue"];
+    [aCoder encodeObject:@(self.plannedValue) forKey:@"plannedValue"];
+}
+
+- (BOOL)isEqual:(id)object{
+    return [self.name isEqualToString: ((Item*)object).name];
 }
 
 @end

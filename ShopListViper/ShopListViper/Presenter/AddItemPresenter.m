@@ -15,7 +15,8 @@
 - (void)saveData:(NSArray *)data{
     Item *item = [[Item alloc] init];
     item.name = data[0];
-    item.value = [data[1] integerValue];
+    item.actualValue = [data[1] integerValue];
+    item.plannedValue = [data[2] integerValue];
     
     NSArray *items = [NSArray arrayWithObjects:item, nil];
     [super saveData:items];

@@ -20,15 +20,16 @@
 #pragma mark - Handle Data
 
 -(id)translateData:(id)data{
-    NSMutableArray *mutableData;
-    if ([data isKindOfClass:[NSArray class]]) {
-        mutableData = [NSMutableArray arrayWithCapacity:[data count]];
-        for (Item *i in data) {
-            [mutableData addObject:i.name];
-            [mutableData addObject:@(i.value)];
-        }
-    }
-    return mutableData;
+//    NSMutableArray *mutableData;
+//    if ([data isKindOfClass:[NSArray class]]) {
+//        mutableData = [NSMutableArray arrayWithCapacity:[data count]];
+//        for (Item *i in data) {
+//            [mutableData addObject:i.name];
+//            [mutableData addObject:@(i.actualValue)];
+//            [mutableData addObject:@(i.plannedValue)];
+//        }
+//    }
+    return data; //mutableData;
 }
 
 

@@ -10,6 +10,9 @@
 
 @interface Item : BaseEntity
 
-@property(nonatomic, assign) NSInteger value;
+@property(nonatomic, assign) NSInteger actualValue;
+@property(nonatomic, assign) NSInteger plannedValue;
+
+- (BOOL)isEqual:(id)object;
 
 @end

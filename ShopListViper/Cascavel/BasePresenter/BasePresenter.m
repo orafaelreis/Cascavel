@@ -39,4 +39,12 @@
     }];
 }
 
+-(void)removeItem:(id)item{
+    [self.interface showLoading];
+    __weak BasePresenter *me = self;
+    [self.useCase removeItem:item WithCallback:^(id items) {
+        [me.interface removeLoading];
+    }];
+}
+
 @end

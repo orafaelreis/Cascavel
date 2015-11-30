@@ -13,5 +13,6 @@
 
 - (void)getItemsWithCallback:(ArrayCallback)callback;
 - (void)addItems:(id) items WithCallback:(ArrayCallback)callback;
+- (void)removeItem:(id)item WithCallback:(ArrayCallback)callback;
 
 @end

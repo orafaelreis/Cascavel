@@ -20,6 +20,7 @@ typedef void (^ArrayCallback)(id items);
 @optional
 - (void)getItemsWithCallback:(ArrayCallback)callback;
 - (void)addItems:(id) items WithCallback:(ArrayCallback)callback;
+- (void)removeItem:(id) item WithCallback:(ArrayCallback)callback;
 
 @end
 #endif

@@ -7,12 +7,12 @@
 //
 
 #import "ItemTableViewController.h"
+#import "ItemTableViewCell.h"
 
 @interface ItemTableViewController()<UITableViewDataSource, UITableViewDelegate>
 
 @end
 
-static CGFloat kDefaultTableViewHeight = 44.f;
 static NSString *kIdentifierCell = @"ItemTableViewCell";
 
 @implementation ItemTableViewController
@@ -33,31 +33,44 @@ static NSString *kIdentifierCell = @"ItemTableViewCell";
 }
 
 -(void)setupData:(id)data{
-    self.items = (NSArray *)data;
+    self.items = (NSMutableArray *)data;
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.items.count / 2;
+    return self.items.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kIdentifierCell forIndexPath:indexPath];
-    NSInteger i = 2 * indexPath.row;
-    cell.textLabel.text = self.items[i];
-    cell.detailTextLabel.text = [self.items[i + 1] stringValue];
+    ItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kIdentifierCell forIndexPath:indexPath];
+    NSInteger i = indexPath.row;
+    cell.textLabel.text = self.items[i].name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d / %d", (int)self.items[i].actualValue, (int)self.items[i].plannedValue];
+    [cell setQuantity:self.items[i].actualValue shouldBe:self.items[i].plannedValue];
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return kDefaultTableViewHeight;
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
 }
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+   
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        [self.presenter removeItem:self.items[indexPath.row]];
+        [self.items removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
+
+
 
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 //{

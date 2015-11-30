@@ -23,6 +23,15 @@
     callback(storedItems);
 }
 
+- (void)removeItem:(id) item WithCallback:(ArrayCallback)callback{
+    NSMutableArray *storedItems = [[self items] mutableCopy];
+    [storedItems removeObject:item];
+    [self setItems:storedItems];
+
+    callback(storedItems);
+}
+
+
 #pragma mark - BaseInteractorProtocol
 
 - (NSString *)entityName{

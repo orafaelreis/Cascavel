@@ -12,5 +12,9 @@
 
 @property(nonatomic, strong) IBOutlet UITextField *nameTextField;
 @property(nonatomic, strong) IBOutlet UILabel *valueLabel;
+@property(nonatomic, strong) IBOutlet UILabel *plannedValue;
+
+@property(nonatomic, strong) IBOutlet UIStepper *valueStepper;
+@property(nonatomic, strong) IBOutlet UIStepper *plannedStepper;
 
 @end

@@ -12,7 +12,7 @@
 @interface ItemTableViewController : BaseViewController
 
 @property(nonatomic, strong) IBOutlet UITableView *tableView;
-@property(nonatomic, strong) NSArray *items;
+@property(nonatomic, strong) NSMutableArray<Item *> *items;
 
 - (void)setupData:(id)data;
 
