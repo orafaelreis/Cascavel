@@ -17,7 +17,8 @@
 @property(nonatomic, weak) IBOutlet id<BaseInterfaceProtocol> interface;
 
 -(void)requestData;
--(void)saveData:(id)data;
+-(void)addData:(id)data;
+-(void)updateData:(id)data;
 -(void)removeItem:(id)item;
 
 @end

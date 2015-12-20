@@ -33,7 +33,7 @@ const uint plannedStepperTag = 2;
 - (IBAction)save:(id)sender{
     int val = self.valueLabel.text.intValue, plannedValue = self.plannedValue.text.intValue;
     NSArray *data = [NSArray arrayWithObjects:self.nameTextField.text, @(val), @(plannedValue), nil];
-    [self.presenter saveData:data];
+    [self.presenter updateData:data];
 }
 
 - (IBAction)changeStepperValue:(UIStepper *) stepper{

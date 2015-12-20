@@ -20,22 +20,37 @@
 - (id)translateData:(id)data{
     NSUInteger index = 0;
     NSDictionary *params = [self.interface params];
-    if (params[kIsEditingParam]) {
+    if ([self isEditing]) {
         index = [params[kItemIndexParam] unsignedIntegerValue];
     }
     return [((NSArray*)data) objectAtIndex:index];
 }
 
 
-- (void)saveData:(NSArray *)data{
+- (void)updateData:(NSArray *)data{
     Item *item = [[Item alloc] init];
     item.name = data[0];
     item.actualValue = [data[1] integerValue];
     item.plannedValue = [data[2] integerValue];
     
     NSArray *items = [NSArray arrayWithObjects:item, nil];
-    [super saveData:items];
+    
+    if ([self isEditing]) {
+        [super updateData:items];
+    }
+    else{
+        [super addData:items];
+    }
+
     [Wireframe backFrom:self.interface];
+}
+
+- (void)addData:(id)data{
+    [self updateData:data];
+}
+
+- (BOOL) isEditing{
+   return [self.interface.params[kIsEditingParam] boolValue];
 }
 
 @end

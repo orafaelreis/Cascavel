@@ -27,7 +27,8 @@
 -(id)translateData:(id)data;
 -(void)addItem;
 -(void)removeItem:(id)item;
--(void)saveData:(id)data;
+-(void)addData:(id)data;
+-(void)updateData:(id)data;
 -(void)reloadView;
 
 @end

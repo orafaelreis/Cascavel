@@ -15,7 +15,7 @@
     callback(storedItems);
 }
 
-- (void)addItems:(id) items WithCallback:(ArrayCallback)callback{// atKey:(NSString*)key;
+- (void)addItems:(NSArray *) items WithCallback:(ArrayCallback)callback{
     NSArray *storedItems = [self items];
     storedItems = [storedItems arrayByAddingObjectsFromArray:items];
     [self setItems:storedItems];
@@ -23,7 +23,22 @@
     callback(storedItems);
 }
 
-- (void)removeItem:(id) item WithCallback:(ArrayCallback)callback{
+- (void)updateItems:(NSArray *) items WithCallback:(ArrayCallback)callback{
+    __block NSMutableArray *storedItems = [[self items] mutableCopy];
+    [items enumerateObjectsUsingBlock:^(id  _Nonnull obj1, NSUInteger idx1, BOOL * _Nonnull stop1) {
+        [storedItems enumerateObjectsUsingBlock:^(id  _Nonnull obj2, NSUInteger idx2, BOOL * _Nonnull stop) {
+            if( [obj1 isEqual: obj2] ){
+                [storedItems replaceObjectAtIndex:idx2 withObject:obj1];
+            }
+        }];
+    }];
+    
+    [self setItems:storedItems];
+    
+    callback(storedItems);
+}
+
+- (void)removeItem:(NSArray *) item WithCallback:(ArrayCallback)callback{
     NSMutableArray *storedItems = [[self items] mutableCopy];
     [storedItems removeObject:item];
     [self setItems:storedItems];

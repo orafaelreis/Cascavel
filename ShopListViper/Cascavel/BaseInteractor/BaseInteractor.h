@@ -12,7 +12,8 @@
 @interface BaseInteractor : NSObject<BaseInteractorProtocol>
 
 - (void)getItemsWithCallback:(ArrayCallback)callback;
-- (void)addItems:(id) items WithCallback:(ArrayCallback)callback;
-- (void)removeItem:(id)item WithCallback:(ArrayCallback)callback;
+- (void)addItems:(NSArray *) items WithCallback:(ArrayCallback)callback;
+- (void)updateItems:(NSArray *) items WithCallback:(ArrayCallback)callback;
+- (void)removeItem:(NSArray *)item WithCallback:(ArrayCallback)callback;
 
 @end

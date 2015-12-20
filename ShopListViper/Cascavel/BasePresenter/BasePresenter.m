@@ -31,10 +31,19 @@
     }];
 }
 
--(void)saveData:(id)data{
+-(void)addData:(id)data{
     [self.interface showLoading];
     __weak BasePresenter *me = self;
     [self.useCase addItems:data WithCallback:^(id items) {
+        [me.interface removeLoading];
+    }];
+    
+}
+
+-(void)updateData:(id)data{
+    [self.interface showLoading];
+    __weak BasePresenter *me = self;
+    [self.useCase updateItems:data WithCallback:^(id items) {
         [me.interface removeLoading];
     }];
 }
