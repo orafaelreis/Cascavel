@@ -8,12 +8,13 @@
 
 #import "BaseViewController.h"
 
-@interface BaseTableViewController : UITableViewController{
+@interface BaseTableViewController : UITableViewController<BaseInterfaceProtocol>{
     BaseViewController *mySelf;
 }
 
 #pragma mark - Decorator Pattern
 @property(nonatomic, strong) IBOutlet id<BasePresenterProtocol> presenter;
+@property(nonatomic, assign) BOOL isEditing;
 
 -(void)showLoading;
 -(void)removeLoading;

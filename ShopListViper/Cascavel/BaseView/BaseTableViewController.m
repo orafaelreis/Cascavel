@@ -10,6 +10,9 @@
 
 @implementation BaseTableViewController
 
+
+@synthesize params;
+
 -(instancetype)init{
     self = [super init];
     if (self) {

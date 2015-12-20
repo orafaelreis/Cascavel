@@ -12,10 +12,13 @@
 //ViewControllers
 @protocol BaseInterfaceProtocol <NSObject>
 
+@property (nonatomic, strong) NSDictionary *params;
+
 @optional
 -(void)showLoading;
 -(void)removeLoading;
 -(void)setupData:(id)data;
+-(void)setParams:(NSDictionary *)params;
 -(void)reloadData;
 -(void)addPullDown;
 

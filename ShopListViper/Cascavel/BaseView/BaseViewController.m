@@ -15,6 +15,8 @@
 
 @implementation BaseViewController
 
+@synthesize params;
+
 #pragma mark - View LifeCycle
 - (void)loadView{
     [super loadView];
