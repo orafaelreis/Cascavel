@@ -7,51 +7,47 @@
 //
 
 #import "Wireframe.h"
-#import "Constants.h"
 #import "ItemTableViewController.h"
-
+#import "AddItemViewController.h"
 
 @implementation Wireframe
 
 #pragma mark - Override 
 
 + (id) entryPoint{
-    return [self listViewControllerFromStoryboard];
+    return [self listViewController];
 }
 
 #pragma mark - Controllers
 
-+ (ItemTableViewController *)listViewControllerFromStoryboard
++ (ItemTableViewController *)listViewController
 {
-    UIStoryboard *storyboard = [self mainStoryboard];
-    return [storyboard instantiateViewControllerWithIdentifier:kItemListViewControllerSID];
+    return [self.mainStoryboard instantiateViewControllerWithIdentifier:kItemListViewControllerSID];
 }
 
-/*
-    * In case of Non Storyboard approach
-    * the follow methods is a template to guide
-*/
-
-//+ (AddItemViewController *)newItemViewControllerFromStoryboard
-//{
-//    UIStoryboard *storyboard = [self mainStoryboard];
-//    AddItemViewController *controller = [storyboard instantiateViewControllerWithIdentifier:kNewItemListViewControllerSID];
-//
-//    //TODO: refactor to configure dependencies
-//    AddItemPresenter *presenter = [[AddItemPresenter alloc] init];
-//    presenter.controller = controller;
-//    controller.eventHandler = presenter;
-//
-//    return controller;
-//}
++ (AddItemViewController *)newItemViewController
+{
+    return [self.mainStoryboard instantiateViewControllerWithIdentifier:kNewItemListViewControllerSID];
+}
 
 
-//+ (void) presentItemControllerFrom: (id) controller{
-//    if ([controller respondsToSelector:@selector(presentViewController:animated:completion:)]) {
-//        UIViewController *nextController = [self listViewControllerFromStoryboard];
-//        [controller presentViewController:nextController animated:YES completion:nil];
-//    }
-//}
++ (void) openAddItemFromController:(id) controller withParams:(NSDictionary*) params{
+    UIViewController<BaseInterfaceProtocol> *nextController = [self newItemViewController];
+    nextController.params = params;
+    
+    //push
+    if ([controller isKindOfClass:[UIViewController class]]) {
+        UIViewController *viewController = (UIViewController *)controller;
+        if (viewController.navigationController) {
+            [viewController.navigationController pushViewController:nextController animated:YES];
+        }
+    }
+    
+    //present
+    else if ([controller respondsToSelector:@selector(presentViewController:animated:completion:)]) {
+        [controller presentViewController:nextController animated:YES completion:nil];
+    }
+}
 
 
 

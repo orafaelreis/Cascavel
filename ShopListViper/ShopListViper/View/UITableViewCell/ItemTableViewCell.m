@@ -18,18 +18,17 @@
 }
 
 - (void)setQuantity:(NSUInteger)quantity shouldBe:(NSUInteger)shouldBe{
-    [_progressView setProgress:(quantity/shouldBe) animated:NO];//;
+    [_progressView setProgress:((float)quantity/(float)shouldBe) animated:NO];//;
     
     if (_progressView.progress < 0.3) {
-        _progressView.backgroundColor = [UIColor redColor];
+        _progressView.trackTintColor = [UIColor redColor];
     }
     else if (_progressView.progress < 0.5) {
-        _progressView.backgroundColor = [UIColor yellowColor];
+        _progressView.trackTintColor = [UIColor yellowColor];
     }
     else{
-        _progressView.backgroundColor = [UIColor greenColor];
+        _progressView.trackTintColor = [UIColor grayColor];
     }
-
 }
 
 //- (void)layoutSubviews{

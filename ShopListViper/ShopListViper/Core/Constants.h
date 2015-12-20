@@ -14,4 +14,10 @@
 static NSString *const kItemListViewControllerSID = @"ItemListViewControllerSID";
 static NSString *const kNewItemListViewControllerSID = @"NewItemListViewControllerSID";
 
+
+#pragma mark - Parameters
+
+static NSString *const kItemIndexParam = @"itemIndex";
+static NSString *const kIsEditingParam = @"isEditing";
+
 #endif

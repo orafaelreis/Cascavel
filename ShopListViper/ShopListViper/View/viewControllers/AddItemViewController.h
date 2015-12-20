@@ -7,6 +7,8 @@
 //
 
 #import "BaseTableViewController.h"
+#import "Item.h"
+
 
 @interface AddItemViewController : BaseTableViewController
 
@@ -16,5 +18,11 @@
 
 @property(nonatomic, strong) IBOutlet UIStepper *valueStepper;
 @property(nonatomic, strong) IBOutlet UIStepper *plannedStepper;
+
+@property(nonatomic, strong) Item *item;
+
+
+- (void)setupData:(id)data;
+
 
 @end

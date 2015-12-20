@@ -7,11 +7,27 @@
 //
 
 #import "AddItemViewController.h"
+#import "Constants.h"
 
 const uint quantityStepperTag = 1;
 const uint plannedStepperTag = 2;
 
 @implementation AddItemViewController
+
+
+- (void)setupData:(id)data{
+    if ([self.params[kIsEditingParam] boolValue]) {
+        self.item = data;
+    }
+}
+
+- (void)reloadData{
+    if (self.item) {
+        self.nameTextField.text = self.item.name;
+        [self setStepper:self.plannedStepper withValue:self.item.plannedValue];
+        [self setStepper:self.valueStepper withValue:self.item.actualValue];
+    }
+}
 
 
 - (IBAction)save:(id)sender{
@@ -20,29 +36,18 @@ const uint plannedStepperTag = 2;
     [self.presenter saveData:data];
 }
 
-- (IBAction)addValue:(UIStepper *)stepper{
-    double val = stepper.value;
-    if (stepper == self.valueStepper) {
-        self.valueLabel.text = [NSString stringWithFormat:@"%d", (int) val];
-    }
-    else if (stepper == self.plannedStepper) {
-        self.plannedValue.text = [NSString stringWithFormat:@"%d", (int) val];
-    }
+- (IBAction)changeStepperValue:(UIStepper *) stepper{
+    [self setStepper:stepper withValue:stepper.value];
 }
 
-
-- (IBAction)subValue:(UIStepper *) stepper{
-    double val = stepper.value;
-    if (val >= 0) {
-        if (stepper == self.valueStepper){
-            self.valueLabel.text = [NSString stringWithFormat:@"%d", (int) val];
-        }
-        else if (stepper == self.plannedStepper){
-            self.plannedValue.text = [NSString stringWithFormat:@"%d", (int) val];
-        }
+- (void)setStepper: (UIStepper*)stepper withValue:(NSUInteger)value{
+    stepper.value = value;
+    if (stepper == self.valueStepper){
+        self.valueLabel.text = [NSString stringWithFormat:@"%d", (int) value];
+    }
+    else if (stepper == self.plannedStepper){
+        self.plannedValue.text = [NSString stringWithFormat:@"%d", (int) value];
     }
 }
-
-
 
 @end

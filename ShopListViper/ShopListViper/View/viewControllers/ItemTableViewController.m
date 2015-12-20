@@ -17,6 +17,7 @@ static NSString *kIdentifierCell = @"ItemTableViewCell";
 
 @implementation ItemTableViewController
 
+@synthesize presenter;
 
 #pragma mark - TODO: BaseViewController
 
@@ -36,6 +37,12 @@ static NSString *kIdentifierCell = @"ItemTableViewCell";
     self.items = (NSMutableArray *)data;
 }
 
+#pragma mark - IBActions
+
+- (IBAction)addItem:(id)sender{
+    [self.presenter openAddItem];
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -46,6 +53,7 @@ static NSString *kIdentifierCell = @"ItemTableViewCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kIdentifierCell forIndexPath:indexPath];
+    
     NSInteger i = indexPath.row;
     cell.textLabel.text = self.items[i].name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%d / %d", (int)self.items[i].actualValue, (int)self.items[i].plannedValue];
@@ -70,16 +78,10 @@ static NSString *kIdentifierCell = @"ItemTableViewCell";
 }
 
 
-
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    
-//}
-
-//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.presenter openAddItemAtIndex:indexPath.row];
+}
 
 
 @end

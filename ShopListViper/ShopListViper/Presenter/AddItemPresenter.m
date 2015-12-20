@@ -12,6 +12,21 @@
 
 @implementation AddItemPresenter
 
+-(void)viewWillAppear{
+    [super viewWillAppear];
+    [self requestData];
+}
+
+- (id)translateData:(id)data{
+    NSUInteger index = 0;
+    NSDictionary *params = [self.interface params];
+    if (params[kIsEditingParam]) {
+        index = [params[kItemIndexParam] unsignedIntegerValue];
+    }
+    return [((NSArray*)data) objectAtIndex:index];
+}
+
+
 - (void)saveData:(NSArray *)data{
     Item *item = [[Item alloc] init];
     item.name = data[0];

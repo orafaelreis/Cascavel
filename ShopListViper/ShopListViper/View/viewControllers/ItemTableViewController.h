@@ -7,12 +7,14 @@
 //
 
 #import "BaseViewController.h"
+#import "ItemListPresenter.h"
 #import "Item.h"
 
 @interface ItemTableViewController : BaseViewController
 
 @property(nonatomic, strong) IBOutlet UITableView *tableView;
 @property(nonatomic, strong) NSMutableArray<Item *> *items;
+@property(nonatomic, strong) ItemListPresenter<BasePresenterProtocol> *presenter;
 
 - (void)setupData:(id)data;
 

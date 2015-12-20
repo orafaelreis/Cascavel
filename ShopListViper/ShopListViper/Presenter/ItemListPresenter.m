@@ -17,19 +17,22 @@
     [self requestData];
 }
 
+#pragma mark - Interface Requests
+
+- (void) openAddItem{
+    NSDictionary *params = @{kIsEditingParam: @(NO)};
+    [Wireframe openAddItemFromController:self.interface withParams:params];
+}
+
+- (void) openAddItemAtIndex: (NSInteger) index{
+    NSDictionary *params = @{kIsEditingParam: @(YES), kItemIndexParam: @(index)};
+    [Wireframe openAddItemFromController:self.interface withParams:params];
+}
+
 #pragma mark - Handle Data
 
 -(id)translateData:(id)data{
-//    NSMutableArray *mutableData;
-//    if ([data isKindOfClass:[NSArray class]]) {
-//        mutableData = [NSMutableArray arrayWithCapacity:[data count]];
-//        for (Item *i in data) {
-//            [mutableData addObject:i.name];
-//            [mutableData addObject:@(i.actualValue)];
-//            [mutableData addObject:@(i.plannedValue)];
-//        }
-//    }
-    return data; //mutableData;
+    return data;
 }
 
 

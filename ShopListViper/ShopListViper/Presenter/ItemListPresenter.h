@@ -11,5 +11,7 @@
 
 @interface ItemListPresenter : BasePresenter;
 
+- (void) openAddItem;
+- (void) openAddItemAtIndex: (NSInteger) index;
 
 @end
