@@ -2,7 +2,7 @@
 //  ItemTableViewCell.m
 //  Cascavel
 //
-//  Created by admin on 29/11/15.
+//  Created by Rafael Reis (@orafaelreis) on 29/11/15.
 //  Copyright © 2015 orafaelreis. All rights reserved.
 //
 

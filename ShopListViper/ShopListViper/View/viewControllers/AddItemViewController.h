@@ -2,8 +2,8 @@
 //  AddItemViewController.h
 //  ShopListViper
 //
-//  Created by admin on 07/09/15.
-//  Copyright (c) 2015 orafaelreis. All rights reserved.
+//  Created by Rafael Reis (@orafaelreis) on 07/09/15.
+//  licensed under MIT license
 //
 
 #import "BaseTableViewController.h"

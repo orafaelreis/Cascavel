@@ -2,8 +2,8 @@
 //  ItemPresenter.m
 //  ShopListViper
 //
-//  Created by admin on 26/07/15.
-//  Copyright (c) 2015 orafaelreis. All rights reserved.
+//  Created by Rafael Reis (@orafaelreis) on 26/07/15.
+//  licensed under MIT license
 //
 
 #import "ItemListPresenter.h"
