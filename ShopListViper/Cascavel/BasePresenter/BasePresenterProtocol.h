@@ -6,8 +6,8 @@
 //  licensed under MIT license
 //
 
-#ifndef ShopListViper_BasePresenter_h
-#define ShopListViper_BasePresenter_h
+#ifndef ShoppingListViper_BasePresenter_h
+#define ShoppingListViper_BasePresenter_h
 
 //Presenter
 @protocol BasePresenterProtocol <NSObject>

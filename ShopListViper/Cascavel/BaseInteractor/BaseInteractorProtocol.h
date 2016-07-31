@@ -6,8 +6,8 @@
 //  licensed under MIT license
 //
 
-#ifndef ShopListViper_BaseInteractorProtocol_h
-#define ShopListViper_BaseInteractorProtocol_h
+#ifndef ShoppingListViper_BaseInteractorProtocol_h
+#define ShoppingListViper_BaseInteractorProtocol_h
 
 typedef void (^ArrayCallback)(id items);
 

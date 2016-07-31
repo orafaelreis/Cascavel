@@ -1,6 +1,6 @@
 //
 //  l
-//  ShopListViper
+//  ShoppingListViper
 //
 //  Created by Rafael Reis (@orafaelreis) on 26/07/15.
 //  licensed under MIT license

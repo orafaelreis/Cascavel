@@ -1,6 +1,6 @@
 //
 //  AddItemPresenter.h
-//  ShopListViper
+//  ShoppingListViper
 //
 //  Created by Rafael Reis (@orafaelreis) on 07/09/15.
 //  licensed under MIT license

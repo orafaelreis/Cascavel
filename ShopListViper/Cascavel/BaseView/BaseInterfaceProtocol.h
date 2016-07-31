@@ -6,8 +6,8 @@
 //  licensed under MIT license
 //
 
-#ifndef ShopListViper_BaseViewProtocol_h
-#define ShopListViper_BaseViewProtocol_h
+#ifndef ShoppingListViper_BaseViewProtocol_h
+#define ShoppingListViper_BaseViewProtocol_h
 
 //ViewControllers
 @protocol BaseInterfaceProtocol <NSObject>
