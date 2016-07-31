@@ -17,13 +17,16 @@
     [self requestData];
 }
 
-- (id)translateData:(id)data{
-    NSUInteger index = 0;
-    NSDictionary *params = [self.interface params];
-    if ([self isEditing]) {
-        index = [params[kItemIndexParam] unsignedIntegerValue];
+- (id)translateData:(NSArray *)data{
+    if (data.count > 0) {
+        NSUInteger index = 0;
+        NSDictionary *params = [self.interface params];
+        if ([self isEditing]) {
+            index = [params[kItemIndexParam] unsignedIntegerValue];
+        }
+        return [((NSArray*)data) objectAtIndex:index];
     }
-    return [((NSArray*)data) objectAtIndex:index];
+    return nil;
 }
 
 

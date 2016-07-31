@@ -97,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				84EC9A761B9D4E4E0032FE9A /* Cascavel */,
-				843C63191B64BBC2008A6055 /* ShopListViper */,
+				843C63191B64BBC2008A6055 /* ShoppingListViper */,
 				843C63181B64BBC2008A6055 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,7 +110,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		843C63191B64BBC2008A6055 /* ShopListViper */ = {
+		843C63191B64BBC2008A6055 /* ShoppingListViper */ = {
 			isa = PBXGroup;
 			children = (
 				846808381B672529007EDE37 /* Core */,
@@ -122,6 +122,7 @@
 				843C63441B64BC6D008A6055 /* Resources */,
 				843C631A1B64BBC2008A6055 /* Supporting Files */,
 			);
+			name = ShoppingListViper;
 			path = ShopListViper;
 			sourceTree = "<group>";
 		};
