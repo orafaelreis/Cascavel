@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		84112E571B9E46C2009C06CD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84112E561B9E46C2009C06CD /* Images.xcassets */; };
-		8432850F1B9EA570001B1579 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 8432850E1B9EA570001B1579 /* README.md */; };
 		843C631D1B64BBC2008A6055 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 843C631C1B64BBC2008A6055 /* main.m */; };
 		843C63201B64BBC2008A6055 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 843C631F1B64BBC2008A6055 /* AppDelegate.m */; };
 		843C63261B64BBC2008A6055 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843C63241B64BBC2008A6055 /* Main.storyboard */; };
@@ -122,8 +121,7 @@
 				843C63441B64BC6D008A6055 /* Resources */,
 				843C631A1B64BBC2008A6055 /* Supporting Files */,
 			);
-			name = ShoppingListViper;
-			path = ShopListViper;
+			path = ShoppingListViper;
 			sourceTree = "<group>";
 		};
 		843C631A1B64BBC2008A6055 /* Supporting Files */ = {
@@ -333,7 +331,7 @@
 			dependencies = (
 			);
 			name = Cascavel;
-			productName = ShopListViper;
+			productName = ShoppingListViper;
 			productReference = 843C63171B64BBC2008A6055 /* Cascavel.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -393,7 +391,6 @@
 				849DCAC01C0BE0CE00D9A533 /* ItemTableViewCell.m in Sources */,
 				84EC9A881B9D57800032FE9A /* BasePresenter.m in Sources */,
 				84EC9A8C1B9D5ADB0032FE9A /* BaseInteractor.m in Sources */,
-				8432850F1B9EA570001B1579 /* README.md in Sources */,
 				84C543CD1B6538EE00F7F017 /* Item.m in Sources */,
 				843C63201B64BBC2008A6055 /* AppDelegate.m in Sources */,
 				84713AF61B9DF524009BB61B /* BaseTableViewController.m in Sources */,
@@ -514,7 +511,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "$(SRCROOT)/ShopListViper/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ShoppingListViper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "orafaelreis.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Cascavel;
@@ -526,7 +523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "$(SRCROOT)/ShopListViper/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ShoppingListViper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "orafaelreis.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Cascavel;
