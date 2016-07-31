@@ -1,15 +1,23 @@
 # Cascavel
 
+Cascavel is a base project to initialize VIPER projects in iOS writted in Objective-C.
 
 ## Viper Architecture
 
-Read the article: [Initial impressions using VIPER Architecture to iOS development](https://medium.com/@orafaelreis/initial-impressions-using-viper-architecture-to-ios-development-675335758ce4)
+Please, read my article about VIPER Architecture: [Initial impressions using VIPER Architecture to iOS development](https://medium.com/@orafaelreis/initial-impressions-using-viper-architecture-to-ios-development-675335758ce4)
 
 ## Framework Concept
 
+VIPER (View, Interactor, Presenter, Entity and Routing) 
 
 **Wireframes**
 - handle the navigation
+
+**Entities
+- Pain old data structure (https://www.wikiwand.com/en/Passive_data_structure)
+
+**Interactors**
+- handle the business rules
 
 **Presenters**
 - handle views
@@ -17,7 +25,6 @@ Read the article: [Initial impressions using VIPER Architecture to iOS developme
 - handle feedback messages
 
 **Views**
-
 - know status: loading, validating, error, success, done.
 - feedback message
 - show/remove Loading
